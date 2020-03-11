@@ -1,5 +1,5 @@
 import axios from 'axios';
-const proxy = 'http://pts.edu.az';
+const proxy = 'http://192.168.140.130:5000';
 
 export default {
 	user: {
