@@ -1,5 +1,5 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -17,14 +17,14 @@ module.exports = {
 	optimization: {
 		splitChunks: {
 			chunks: 'all',
-			minSize: 10000,
+			minSize: 90000,
 			automaticNameDelimiter: '_'
 		}
 	},
 	module: {
 		rules: [
 			{
-				test: /\.(png|jpg)$/,
+				test: /\.(jpg|png|gif|svg)$/,
 				use: [
 					'file-loader'
 				]
@@ -62,8 +62,8 @@ module.exports = {
 		]
 	},
 	plugins: [
+		// new UglifyJsPlugin(),
 		new CleanWebpackPlugin(),
-		new UglifyJsPlugin(),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css'
 		}),
@@ -78,5 +78,6 @@ module.exports = {
 			    useShortDoctype: true
 			},
 	    })
-	]
+	],
+	performance: { hints: false }
 }
