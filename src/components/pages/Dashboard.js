@@ -16,7 +16,7 @@ export default props => {
 
 	return (
 		<div>
-			<p><span><FormattedMessage id="dasborad"/></span>{user.email &&
+			<p><span><FormattedMessage id="dashboard"/></span>{user.email &&
 				<span>
 					<span> - {user.username}</span> - <span onClick={logoutt} style={{ cursor: 'pointer', color: 'red' }}><FormattedMessage id="logout"/></span>
 				</span>
